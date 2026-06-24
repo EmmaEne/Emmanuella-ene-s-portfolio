@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* ─── Design System Tokens ─── */
+@theme inline {
+  /* Colors - Redesigned Developer Dark Theme */
+  --color-burgundy: #6366f1;         /* Indigo Accent */
+  --color-burgundy-light: #818cf8;   /* Indigo Light */
+  --color-beige: #18181b;            /* Dark zinc card background */
+  --color-beige-dark: #27272a;       /* Zinc borders and accents */
+  --color-gold: #06b6d4;             /* Cyan Accent */
+  --color-gold-light: #22d3ee;       /* Cyan Light */
+  --color-offwhite: #09090b;         /* Deep dark background */
+  --color-charcoal: #fafafa;         /* High contrast white text */
+  --color-muted: #a1a1aa;            /* Mid-contrast gray text */
+  --color-muted-light: #71717a;      /* Muted gray text */
+  --color-divider: #27272a;          /* Clean dark border */
+
+  /* Typography - Redesigned Tech Fonts */
+  --font-serif: "Space Grotesk", "Inter", sans-serif;
+  --font-sans: "Inter", "Helvetica Neue", "Arial", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* Spacing */
+  --spacing-editorial: 8rem;
+  --spacing-section: 10rem;
+
+  /* Animations */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-fade-up: fade-up 0.8s var(--ease-editorial) forwards;
+  --animate-line-expand: line-expand 1.2s var(--ease-editorial) forwards;
+  --animate-fade-in: fade-in 0.6s var(--ease-editorial) forwards;
+  --animate-slide-border: slide-border 0.4s var(--ease-editorial) forwards;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes line-expand {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-border {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* ─── Base Styles ─── */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-offwhite);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  overflow-x: hidden;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background-color: var(--color-burgundy);
+  color: var(--color-beige);
+}
+
+::-moz-selection {
+  background-color: var(--color-burgundy);
+  color: var(--color-beige);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-offwhite);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted-light);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
+
+/* ─── Editorial Utilities ─── */
+.editorial-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (min-width: 768px) {
+  .editorial-container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .editorial-container {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+/* ─── Fine Divider ─── */
+.fine-divider {
+  height: 1px;
+  background-color: var(--color-divider);
+  width: 100%;
+}
+
+/* ─── Editorial Link Underline ─── */
+.editorial-link {
+  position: relative;
+  display: inline-block;
+}
+
+.editorial-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-burgundy);
+  transition: width 0.4s var(--ease-editorial);
+}
+
+.editorial-link:hover::after {
+  width: 100%;
+}
+
+/* ─── Typography Utilities ─── */
+.heading-editorial {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-charcoal);
+}
+
+.body-editorial {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+
+/* ─── Gold Accent ─── */
+.gold-accent {
+  color: var(--color-gold);
+}
+
+/* ─── Burgundy Line ─── */
+.burgundy-line {
+  background-color: var(--color-burgundy);
+}
+
+/* ─── Section Spacing ─── */
+.section-spacing {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  .section-spacing {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+}
+
+/* ─── Tech Custom Utilities ─── */
+.font-mono {
+  font-family: var(--font-mono), monospace;
+}
+
+.text-gradient-indigo-cyan {
+  background: linear-gradient(135deg, var(--color-burgundy) 0%, var(--color-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glowing-border-card {
+  position: relative;
+  background-color: var(--color-beige);
+  border: 1px solid var(--color-beige-dark);
+  transition: all 0.3s var(--ease-editorial);
+}
+
+.glowing-border-card:hover {
+  border-color: var(--color-burgundy);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+}
+
+.terminal-box {
+  background-color: #0c0c0e;
+  border: 1px solid #1f1f23;
+  border-radius: 8px;
+  font-family: var(--font-mono), monospace;
+}
