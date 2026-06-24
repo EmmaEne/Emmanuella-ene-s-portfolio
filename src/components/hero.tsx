@@ -49,7 +49,7 @@ export function Hero() {
           {/* Tagline */}
           <Reveal delay={0.35}>
             <p className="font-mono text-[10px] md:text-xs tracking-[0.15em] text-muted max-w-xl mx-auto uppercase">
-              Lead Frontend Engineer &bull; Creative designer
+              Lead Frontend Engineer &bull; Web developer
             </p>
           </Reveal>
 

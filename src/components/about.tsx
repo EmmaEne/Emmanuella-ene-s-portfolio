@@ -59,7 +59,7 @@ export function About() {
                 <div className="p-5 font-mono text-[12px] space-y-5 text-muted">
                   <div>
                     <span className="text-gold">$</span> <span className="text-charcoal font-bold">whoami</span>
-                    <p className="text-muted-light mt-1">emmanuella_ene (Frontend Engineer / UI Craftsman)</p>
+                    <p className="text-muted-light mt-1">emmanuella_ene (Frontend Engineer / Web developer)</p>
                   </div>
 
                   <div>
