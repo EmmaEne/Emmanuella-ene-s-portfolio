@@ -20,7 +20,7 @@ const projects: Project[] = [
   {
     number: "01",
     title: "Arvys Technologies",
-    category: "AI Platform",
+    category: "IT Center",
     description:
       "An Edu tech establishment teaching practical tech skills, centered on collaborating with universitys to train tertiary students for the real job market",
     tech: ["Html", "Bootstrap", "JavaScript"],
