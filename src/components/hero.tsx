@@ -18,26 +18,39 @@ export function Hero() {
       {/* Glow Behind Text */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full bg-gradient-to-tr from-burgundy to-gold opacity-[0.18] blur-[80px] pointer-events-none" />
 
+      {/* Left HUD Details */}
+      <div className="absolute left-8 bottom-20 hidden xl:block font-mono text-[9px] text-muted-light/35 space-y-1 select-none pointer-events-none">
+        <p>// LOCATION: NIGERIA</p>
+        <p>// LAT_LONG: 9.0820° N / 8.6753° E</p>
+      </div>
+
+      {/* Right HUD Details */}
+      <div className="absolute right-8 bottom-20 hidden xl:block font-mono text-[9px] text-muted-light/35 space-y-1 text-right select-none pointer-events-none">
+        <p>SYS_STATUS: COMPILER_ONLINE</p>
+        <p>BUILD_VERSION: V2.1.2</p>
+      </div>
+
       <div className="editorial-container w-full relative z-10">
-        <div className="max-w-5xl mx-auto text-center flex flex-col items-center space-y-8">
+        <div className="max-w-5xl mx-auto text-center flex flex-col items-center space-y-6">
 
           {/* Headline */}
           <div className="w-full">
             <RevealText delay={0.2}>
-              <h1 className="font-serif text-[clamp(2rem,3.8vw,4.8rem)] font-extrabold leading-[1.12] text-muted tracking-tight">
+              <h1 className="font-serif text-[clamp(1.3rem,6vw,2.5rem)] md:text-[clamp(2rem,3.8vw,4.8rem)] font-extrabold leading-[1.12] text-charcoal tracking-tight">
                 Your website is the first thing
                 <br />
                 a client judges you by.
                 <br />
+                I make sure you <span className="text-gradient-indigo-cyan font-serif">WIN</span>
               </h1>
             </RevealText>
           </div>
 
-          {/* Subtitle */}
-          <Reveal delay={0.4}>
-            <h1 className="font-serif text-[clamp(4.4rem,4.2vw,7rem)] font-extrabold leading-[1.12] text-charcoal tracking-tight">
-              I make sure you <span className="text-gradient-indigo-cyan">WIN</span>
-            </h1>
+          {/* Tagline */}
+          <Reveal delay={0.35}>
+            <p className="font-mono text-[10px] md:text-xs tracking-[0.15em] text-muted max-w-xl mx-auto uppercase">
+              Lead Frontend Engineer &bull; Creative designer
+            </p>
           </Reveal>
 
           {/* CTAs */}
@@ -67,7 +80,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5"
+        className="absolute bottom-3 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5"
       >
         <span className="text-[10px] font-mono tracking-[0.2em] uppercase text-muted-light">
           Scroll
