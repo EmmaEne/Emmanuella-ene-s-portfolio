@@ -47,7 +47,7 @@ const projects: Project[] = [
       "A modern university learning management system with elegant authentication, student portals, and a warm academic design language.",
     tech: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
     image: "/havilla-preview.png",
-    liveUrl: "https://havilla-university.vercel.app/login",
+    liveUrl: "https://havilla-university.vercel.app/",
     githubUrl: "https://github.com/EmmaEne/Havilla-university",
   },
 ];
